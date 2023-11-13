@@ -28,12 +28,12 @@ const ActionButton = (action: Action) => {
   return (
     <>
       <button className="w-fit m-4" onClick={onClick}>
-        <p className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-[300px]">
+        <p className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 w-[200px]">
           {action.title}
         </p>
-        <img src={action.image} className="w-[300px] h-auto" />
+        <img src={action.image} className="w-[200px] h-auto" />
       </button>
-      {show && <Toast msg="Anh nhận được rồi nheeee, anh qua liền nè 😍" />}
+      {show && <Toast msg="Anh thấy được tin em rồiii, anh qua liền nè 😍" />}
     </>
   );
 };
@@ -42,7 +42,7 @@ const ActionMenu = () => {
   return (
     <>
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="font-bold fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
+        <p className="text-2xl font-bold fixed left-0 top-0 flex w-full  justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           Anh ơi em...
         </p>
       </div>
