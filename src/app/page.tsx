@@ -93,7 +93,10 @@ const Verification = ({
         {PASS_CODE.split("").map((_, index: number) => {
           const displayValue = value.charAt(index);
           return (
-            <p className="w-10 h-10 border-2 border-gray-300 p-2 m-2 text-center">
+            <p
+              className="w-10 h-10 border-2 border-gray-300 p-2 m-2 text-center"
+              key={`code-${index}`}
+            >
               {displayValue}
             </p>
           );
@@ -103,7 +106,7 @@ const Verification = ({
       <div className="grid grid-cols-3 gap-12 gap-y-8 mt-6">
         {"123456789.0".split("").map((item: string) => (
           <VerificationCodeInput
-            key={item}
+            key={`code-index-${item}`}
             code={item}
             onClick={() => setValue(`${value}${item}`)}
           />
