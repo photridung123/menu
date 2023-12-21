@@ -1,7 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
 import { sendNotification } from "@/services/telegramService";
 import { useToast } from "@/store";
 import { Action } from "./ActionMenu";
+import { CldImage } from "next-cloudinary";
+import { PREFIX_CLOUD_IMAGE } from "@/constant";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
@@ -20,13 +21,15 @@ export const ActionButton = (action: Action) => {
       role="button"
       onClick={onClick}
     >
-      <p className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 w-52 text-sm text-center capitalize">
+      <p className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 w-64 text-sm text-center capitalize">
         {action.title}
       </p>
-      <img
-        src={action.image}
-        className="w-52 object-cover h-auto"
+      <CldImage
+        width={200}
+        height={300}
+        src={`${PREFIX_CLOUD_IMAGE}/${action.image}`}
         alt="action-image"
+        className="w-64 h-56 object-cover"
       />
     </div>
   );

@@ -12,33 +12,33 @@ export interface Action {
 export const ACTION_MENU: Action[] = [
   {
     title: "muốn nói chuyện với anh",
-    image: "/menu/het_gian.jpg",
+    image: `linh3.jpg`,
     text: "Anh ơi, em muốn nói chuyện với anh",
     customRenderer: <AlarmActionModal />,
   },
   {
     title: "muốn nói chuyện với anh",
-    image: "/menu/het_gian.jpg",
+    image: "linh6.jpg",
     text: "Anh ơi, em muốn nói chuyện với anh",
   },
   {
     title: "muốn đi chơi với anh",
-    image: "/menu/chan_qua.jpg",
+    image: "linh5.jpg",
     text: "Anh ơi, em chán quá, dẫn em đi chơi đi",
   },
   {
     title: "muống đi ăn với anh",
-    image: "/menu/di_an.jpg",
+    image: "linh4.jpg",
     text: "Anh ơi, em đói rồi, dẫn em đi ăn đi",
   },
   {
     title: "muốn đi tà tữa với anh",
-    image: "/menu/tra_sua.jpg",
+    image: "linh1.jpg",
     text: "Anh ơi, em muốn uống tà tữa, mình đi mua đi",
   },
   {
     title: "cần anh phụ việc em",
-    image: "/menu/phu_viec.jpg",
+    image: "linh2.jpg",
     text: "Anh ơi, em cần anh phụ việc em",
   },
 ];
@@ -51,7 +51,7 @@ export const ActionMenu = () => {
           Anh ơi em...
         </p>
       </div>
-      <div className="mt-28">
+      <div className="mt-28 mb-12">
         {ACTION_MENU.map((item: Action, index: number) => (
           <span key={`${item.title}-${index}`}>
             {item.customRenderer ? (
