@@ -2,7 +2,7 @@ import { sendNotification } from "@/services/telegramService";
 import { useToast } from "@/store";
 import { Action } from "./ActionMenu";
 import { CldImage } from "next-cloudinary";
-import { PREFIX_CLOUD_IMAGE } from "@/constant";
+import { PREFIX_CLOUDINARY } from "@/constant";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
@@ -27,7 +27,7 @@ export const ActionButton = (action: Action) => {
       <CldImage
         width={200}
         height={300}
-        src={`${PREFIX_CLOUD_IMAGE}/${action.image}`}
+        src={`${PREFIX_CLOUDINARY}/${action.image}`}
         alt="action-image"
         className="w-64 h-56 object-cover"
       />

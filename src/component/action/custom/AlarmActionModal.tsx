@@ -1,5 +1,5 @@
 import { Modal, SelectVirtualize } from "@/component";
-import { PREFIX_CLOUD_IMAGE, TIME } from "@/constant";
+import { PREFIX_CLOUDINARY, TIME } from "@/constant";
 import { sendNotification } from "@/services/telegramService";
 import { useToast } from "@/store";
 import { CldImage } from "next-cloudinary";
@@ -38,7 +38,7 @@ export const AlarmActionModal = () => {
         <CldImage
           width={200}
           height={300}
-          src={`${PREFIX_CLOUD_IMAGE}/linh3.jpg`}
+          src={`${PREFIX_CLOUDINARY}/linh3.jpg`}
           alt="action-image"
           className="w-64 h-56 object-cover"
         />

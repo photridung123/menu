@@ -1,28 +1,31 @@
-import { PASS_CODE } from "@/constant";
-import { useEffect, useState } from "react";
+import { createArray, verifyPassCode } from "@/utility";
+import { useEffect, useMemo, useState } from "react";
 import { VerificationCodeInput } from ".";
 
 export const Verification = ({
-  setIsVerified,
+  setPassCode,
 }: {
-  setIsVerified: (value: boolean) => void;
+  setPassCode: (value: string) => void;
 }) => {
   const [value, setValue] = useState("");
 
+  const sixLengthArray = useMemo(() => createArray(6), []);
+
   useEffect(() => {
-    if (value.length === PASS_CODE.length) {
-      if (value === PASS_CODE) {
-        setIsVerified(true);
+    if (value.length === 6) {
+      if (verifyPassCode(value)) {
+        setPassCode(value);
       }
       setValue("");
     }
-  }, [value]);
+  }, [value, setPassCode]);
+
   return (
     <div className="h-screen flex flex-col items-center justify-center gap-y-16">
       <div className="flex flex-col items-center space-y-12">
         <div className="font-bold text-xl">Nhập mật khẩu</div>
         <div className="flex">
-          {PASS_CODE.split("").map((_, index: number) => {
+          {sixLengthArray.map((_, index: number) => {
             const displayValue = value.charAt(index);
             return (
               <p
